@@ -113,10 +113,6 @@ steps:
 | Specific version (e.g. `120.0.6099`) | ✅        | ✅      | ✅        | ✅      | ❌            |
 | Latest snapshot                      | ✅        | ✅      | ✅        | ✅      | ✅            |
 
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, workflow, and release process.
-
 ## License
 
 [MIT](LICENSE)
