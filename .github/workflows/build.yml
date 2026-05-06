@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.2
       - uses: actions/setup-node@v6
         with:
           node-version-file: 'package.json'
@@ -24,7 +24,7 @@ jobs:
         version: ["", 1295939, 120, dev, latest]
     runs-on: ${{ matrix.os }}-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.2
 
       - name: Install Google Chrome
         uses: ./
@@ -46,7 +46,7 @@ jobs:
     if: github.actor != 'dependabot[bot]'
     runs-on: windows-11-arm
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.2
 
       - name: Install Google Chrome
         uses: ./
@@ -73,7 +73,7 @@ jobs:
       - name: Install tar and git (opensuse/leap)
         run: zypper install --no-confirm tar git
         if: ${{ matrix.container == 'opensuse/leap' }}
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.2
       - name: Install action dependencies
         run: apt-get update && apt-get install -y unzip
         if: ${{ matrix.container == 'debian' || matrix.container == 'ubuntu' || matrix.container == 'linuxmintd/mint21-amd64' }}
