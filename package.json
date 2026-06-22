@@ -14,7 +14,7 @@
     "@actions/io": "^3.0.2",
     "@actions/tool-cache": "^4.0.0",
     "actions-swing": "^0.0.6",
-    "axios": "^1.16.0"
+    "axios": "^1.18.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.14",
