@@ -106,12 +106,12 @@ steps:
 
 ## Supported platforms
 
-|                                      | Linux x64 | Mac x64 | Mac Arm64 | Windows | Windows Arm64 |
-| ---                                  | ---       | ---     | ---       | ---     | ---           |
-| Channel name (e.g. `stable`)         | ✅        | ✅      | ✅        | ✅      | ❌            |
-| Commit position (e.g. `1295939`)     | ✅        | ✅      | ✅        | ✅      | ✅            |
-| Specific version (e.g. `120.0.6099`) | ✅        | ✅      | ✅        | ✅      | ❌            |
-| Latest snapshot                      | ✅        | ✅      | ✅        | ✅      | ✅            |
+|                                      | Linux x64 | Linux ARM64 | Mac x64 | Mac Arm64 | Windows | Windows Arm64 |
+| ---                                  | ---       | ---         | ---     | ---       | ---     | ---           |
+| Channel name (e.g. `stable`)         | ✅        | ✅          | ✅      | ✅        | ✅      | ❌            |
+| Commit position (e.g. `1295939`)     | ✅        | ❌          | ✅      | ✅        | ✅      | ✅            |
+| Specific version (e.g. `120.0.6099`) | ✅        | ✅          | ✅      | ✅        | ✅      | ❌            |
+| Latest snapshot                      | ✅        | ❌          | ✅      | ✅        | ✅      | ✅            |
 
 ## License
 
