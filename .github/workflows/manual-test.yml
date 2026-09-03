@@ -24,7 +24,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
       - uses: actions/setup-node@v6
         with:
           node-version-file: 'package.json'
@@ -39,7 +39,7 @@ jobs:
     runs-on: ${{ inputs.os }}
     container: ${{ inputs.container }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7.0.1
       - name: Install chrome
         uses: ./
         with:
