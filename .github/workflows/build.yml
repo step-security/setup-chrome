@@ -6,8 +6,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
         with:
           node-version-file: 'package.json'
           cache: 'npm'
@@ -24,7 +29,12 @@ jobs:
         version: ["", 1295939, 120, dev, latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v6
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
 
       - name: Install Google Chrome
         uses: ./
@@ -46,7 +56,12 @@ jobs:
     if: github.actor != 'dependabot[bot]'
     runs-on: windows-11-arm
     steps:
-      - uses: actions/checkout@v6
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
 
       - name: Install Google Chrome
         uses: ./
@@ -62,7 +77,12 @@ jobs:
     needs: [build]
     runs-on: ubuntu-24.04-arm
     steps:
-      - uses: actions/checkout@v6
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
 
       - name: Install Google Chrome
         uses: ./
@@ -89,7 +109,7 @@ jobs:
       - name: Install tar and git (opensuse/leap)
         run: zypper install --no-confirm tar git
         if: ${{ matrix.container == 'opensuse/leap' }}
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
       - name: Install action dependencies
         run: apt-get update && apt-get install -y unzip
         if: ${{ matrix.container == 'debian' || matrix.container == 'ubuntu' || matrix.container == 'linuxmintd/mint21-amd64' }}
